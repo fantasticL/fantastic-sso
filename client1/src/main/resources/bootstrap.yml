@@ -1,0 +1,12 @@
+#环境信息， 通过这个配置来控制是否真正的请求   参数[本地测试:test,生产:prod]
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+server:
+  port: 8081
+spring:
+  application:
+    name: client1
+  profiles:
+    active: dev,test
