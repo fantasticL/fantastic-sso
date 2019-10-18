@@ -1,12 +1,17 @@
-#环境信息， 通过这个配置来控制是否真正的请求   参数[本地测试:test,生产:prod]
- server:
-    port: 8080
+#环境信息， 通过这个配置来控制是否真正的请求   参数[本地测试:test,生产:prod] 8080
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    eviction-interval-timer-in-ms: 30000
+    enable-self-preservation: true
+    renewal-threshold-update-interval-ms: 30000
+  instance:
+    hostname: localhost
+server:
+  port: 8080
 
- eureka:
-    instance:
-        hostname: localhost
-    client:
-        registerWithEureka: false
-        fetchRegistry: false
-        serviceUrl:
-            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+

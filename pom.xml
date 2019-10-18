@@ -11,6 +11,9 @@
     <modules>
         <module>server</module>
         <module>client1</module>
+        <module>client2</module>
+        <module>productclient2</module>
+        <module>productclient3</module>
     </modules>
 
     <parent>
